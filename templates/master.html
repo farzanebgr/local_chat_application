@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'header_ref.html' %}
+    <link rel="icon" href="../static/images/icon/chat.png" type="image/x-icon" sizes="16x16">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+{% include 'navbar.html' %}
+{% block content %}{% endblock content %}
+{% include 'footer_ref.html' %}
+</body>
+
+</html>

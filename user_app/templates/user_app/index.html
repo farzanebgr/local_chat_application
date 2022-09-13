@@ -1,0 +1,18 @@
+{% extends 'master.html' %}
+{% block title %} Register {% endblock title %}
+{% block content %}
+    <section class="h-100 bg-dark" xmlns="http://www.w3.org/1999/html">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4">
+                        <div class="container-fluid mt-3">
+                            <h1>Register Form</h1>
+                            <a class="w3-btn w3-round-xxlarge" href="{% url 'register-page' %}">Register</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
