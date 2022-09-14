@@ -30,3 +30,22 @@ class RegisterForm(forms.Form):
                                          validators.EmailValidator,])
     user_avatar = forms.ImageField()
     user_gender = forms.BooleanField(label='Lady')
+
+
+class LoginForm(forms.Form):
+        username = forms.CharField(
+            label='Username',
+            widget=forms.TextInput(attrs={
+                                 'class':'form-control form-control-lg'}),
+            validators=[
+                validators.MaxLengthValidator(100),
+            ]
+        )
+        password = forms.CharField(
+            label='Password',
+            widget=forms.PasswordInput(attrs={
+                                 'class':'form-control form-control-lg'}),
+            validators=[
+                validators.MaxLengthValidator(100)
+            ]
+        )

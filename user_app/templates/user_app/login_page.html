@@ -1,0 +1,53 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block title %} Login {% endblock title %}
+{% block content %}
+    <div class="container-fluid mt-3">
+        <h1>Login Form</h1>
+        <h3>You can log in on the site.</h3>
+    </div>
+    <section class="h-100 bg-dark" xmlns="http://www.w3.org/1999/html">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="{% static 'images/pic/login.jpg' %}"
+                                     alt="Sample photo" class="img-fluid"
+                                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5 text-uppercase">{{ showMessage }}</h3>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <form action="{% url 'login-page' %}" method="post">
+                                                    <div class="form-outline">
+                                                        <br/>
+                                                        {{ login_form.username.label }}
+                                                        {{ login_form.username }}
+                                                        {{ login_form.username.errors }}
+                                                    </div>
+                                                <div class="form-outline">
+                                                        <br/>
+                                                        {{ login_form.password.label }}
+                                                        {{ login_form.password }}
+                                                        {{ login_form.password.errors }}
+                                                    </div>
+                                                <div class="d-flex justify-content-end pt-3">
+                                                    <button type="reset" class="btn btn-light btn-lg">Reset all</button>
+                                                    <button type="submit" class="btn btn-warning btn-lg ms-2">login</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
